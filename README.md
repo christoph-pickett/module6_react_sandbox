@@ -1,2 +1,3 @@
 # module6_react_sandbox
-a basic react app sandbox for module work
+
+This this a readme for Module 6, we will update this as we go.
