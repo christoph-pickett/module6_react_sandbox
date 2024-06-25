@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <GreetingsHoC name={"Alvin"}>
-        <p>I want to welcome you to my website</p>
+        <p>I want to welcome you to my website, blah blah</p>
       </GreetingsHoC>
     </>
   );
