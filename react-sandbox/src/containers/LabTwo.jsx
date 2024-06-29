@@ -1,5 +1,6 @@
-import { BigCats, SingleCat } from "../components/BigCats";
+import { BigCats } from "../components/BigCats";
 import { LabelAndContent } from "../components/LabelAndContent";
+import { SingleCat } from "../components/SingleCats";
 
 export const LabTwo = () => {
   return (
