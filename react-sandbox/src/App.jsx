@@ -3,31 +3,58 @@ import "./App.css";
 import { Greetings, GreetingsHoC } from "./components/Greetings";
 import { LabTwo } from "./containers/LabTwo";
 import { LabOne } from "./containers/LabOne";
+import { LabThree } from "./containers/LabThree";
 
 // COMPONENT FUNCTION NAME -> INITIALISE
 const App = () => {
   const [contentName, setContentName] = useState("");
+
   // STATES & VARIABLES
-  const contentDictionary = {
-    labOne: "Lab 1",
-    labTwo: "Lab 2",
-  };
+
+  const contentConfig = [{ lab: "Lab 1" }, { lab: "Lab 2" }, { lab: "Lab 3" }];
 
   // FUNCTIONS
   const displayHandler = () => {
     switch (contentName) {
-      case contentDictionary.labOne:
+      case contentConfig[0].lab:
         return <LabOne />;
-      case contentDictionary.labTwo:
+      case contentConfig[1].lab:
         return <LabTwo />;
+      case contentConfig[2].lab:
+        return <LabThree />;
       default:
-        return <div>Click on a Lab button to see the content</div>;
+        return (
+          <div
+            style={{ display: "flex", width: "100%", justifyContent: "center" }}
+          >
+            Click on a Lab button to see the content
+          </div>
+        );
     }
+  };
+
+  const buttonConstructor = () => {
+    const buttonElementArray = contentConfig.map((content) => {
+      return (
+        <button
+          key={content.lab}
+          onClick={() => setContentName(content.lab)}
+          style={{ margin: "5px" }}
+        >
+          {content.lab}
+        </button>
+      );
+    });
+
+    return buttonElementArray;
   };
 
   //RETURN
   return (
-    <div className="main-app-container">
+    <div
+      className="main-app-container"
+      style={{ display: "flex", flexDirection: "column", width: "60vw" }}
+    >
       <p>
         This is the welcome page that will display the buttons for each lab{" "}
       </p>
@@ -39,18 +66,14 @@ const App = () => {
           marginBottom: "5px",
         }}
       >
-        <button onClick={() => setContentName(contentDictionary.labOne)}>
-          Lab 1
-        </button>
-        <button onClick={() => setContentName(contentDictionary.labTwo)}>
-          Lab 2
-        </button>
+        {buttonConstructor()}
       </div>
 
       <div
         style={{
           display: "flex",
-          width: "90vw",
+          margin: "0 auto",
+          width: "90%",
           height: "70vh",
           border: "red 1px solid",
           overflow: "scroll",
