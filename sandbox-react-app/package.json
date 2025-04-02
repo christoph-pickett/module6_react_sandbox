@@ -12,6 +12,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-beta.70",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
