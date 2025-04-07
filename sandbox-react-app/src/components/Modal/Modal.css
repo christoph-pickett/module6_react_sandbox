@@ -1,0 +1,21 @@
+.modal-background {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.modal-body {
+    font-family: sans-serif;
+    color: white;
+    width: fit-content;
+    min-width: 10em;
+    margin: auto auto;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: #393939;
+}
